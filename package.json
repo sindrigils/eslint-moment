@@ -1,0 +1,32 @@
+{
+    "name": "@sindrigils/eslint-moment",
+    "version": "1.0.0",
+    "description": "An ESLint plugin that forbids the use of the moment library.",
+    "main": "index.js",
+    "keywords": [
+        "eslint",
+        "eslintplugin",
+        "moment",
+        "lint"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindrigils/eslint-moment.git"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "peerDependencies": {
+        "eslint": ">=7.0.0"
+    },
+    "publishConfig": {
+        "@sindrigils:registry": "https://npm.pkg.github.com"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.13",
+        "@typescript-eslint/experimental-utils": "^5.62.0",
+        "@typescript-eslint/parser": "^8.28.0",
+        "eslint": "^9.23.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2"
+    }
+}
