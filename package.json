@@ -1,6 +1,6 @@
 {
     "name": "@sindrigils/eslint-plugin-moment",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "An ESLint plugin that forbids the use of the moment library.",
     "main": "index.js",
     "keywords": [
@@ -31,7 +31,7 @@
     },
     "overrides": {
         "@typescript-eslint/experimental-utils": {
-          "eslint": "^9.20.0"
+            "eslint": "^9.20.0"
         }
-      }
+    }
 }
