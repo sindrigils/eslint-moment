@@ -1,6 +1,6 @@
 {
     "name": "@sindrigils/eslint-plugin-moment",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "An ESLint plugin that forbids the use of the moment library.",
     "main": "index.js",
     "keywords": [

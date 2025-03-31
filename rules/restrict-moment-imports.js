@@ -1,6 +1,4 @@
-import { TSESLint, TSESTree } from "@typescript-eslint/experimental-utils";
-
-const rule: TSESLint.RuleModule<"restrictedImport", []> = {
+const rule = {
   defaultOptions: [],
   meta: {
     type: "problem",
@@ -15,7 +13,7 @@ const rule: TSESLint.RuleModule<"restrictedImport", []> = {
   },
   create(context) {
     // Helper function to report a restricted import
-    function reportIfRestricted(importName: string, node: TSESTree.Node) {
+    function reportIfRestricted(importName, node) {
       if (importName === "moment") {
         context.report({
           node,
@@ -27,7 +25,7 @@ const rule: TSESLint.RuleModule<"restrictedImport", []> = {
 
     return {
       // Handle ES module imports: import ... from "moment"
-      ImportDeclaration(node: TSESTree.ImportDeclaration) {
+      ImportDeclaration(node) {
         if (
           node.source &&
           node.source.type === "Literal" &&
@@ -38,7 +36,7 @@ const rule: TSESLint.RuleModule<"restrictedImport", []> = {
       },
 
       // Handle CommonJS require: const x = require("moment")
-      CallExpression(node: TSESTree.CallExpression) {
+      CallExpression(node) {
         if (
           node.callee.type === "Identifier" &&
           node.callee.name === "require" &&
@@ -51,7 +49,7 @@ const rule: TSESLint.RuleModule<"restrictedImport", []> = {
       },
 
       // Handle dynamic imports: import("moment")
-      ImportExpression(node: TSESTree.ImportExpression) {
+      ImportExpression(node) {
         if (
           node.source &&
           node.source.type === "Literal" &&
